@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.background {
+  background-image:linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    ), url("./sarStat.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 95vh;
+
+}
+
+.navBar {
+  height: 25px;
+  background-color: #01718a;
+}
+ul {
+  list-style-type: none;
+}
+.nav1List {
+  margin-right: 5%;
+  position: sticky;
+}
+.nav1 {
+  display: inline-flex;
+  float: right;
+}
+.nav1 a {
+  float: left;
+  display: inline-block;
+  color: #94bcc7;
+  padding: 5px 10px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.nav1 a:hover {
+  color: white;
+}
+
+/* Nav Bar2 styling : */
+.navBar2 {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  overflow: hidden;
+}
+
+#SAR_logo {
+  margin-top: 0;
+  height: 13ch;
+  width: 50ch;
+  padding: 25px;
+}
+
+.nav2List {
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.nav2 {
+  padding-left: 170px;
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}
+
+.nav2 a {
+  padding-right: 30px;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  text-align: left;
+}
+
+li.about,
+li.help,
+li.media,
+li.travel {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-content,
+.travel-content,
+.media-content,
+.help-content {
+  display: none;
+  flex-direction: column;
+  background-color: #01718a;
+  min-width: 160px;
+  position: fixed;
+  top: 5.5rem;
+}
+
+.about:hover .about-content,
+.travel:hover .travel-content,
+.media:hover .media-content,
+.help:hover .help-content {
+  display: flex;
+}
+
+.about-content a,
+.travel-content a,
+.media-content a,
+.help-content a {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* Search Bar Styling  */
+.searchBar {
+  width: 80vh;
+  height: 8ch;
+  margin: 250px 400px 0 350px;
+  background-color: white;
+  border: none;
+  display: inline-block;
+  
+}
+
+#searchBar {
+  margin: 7px 0 15px 10px;
+  padding-left: 40px;
+  width: 65vh;
+  height: 6ch;
+  border: none;
+  background-color: #e5e4e3;
+  text-align: left;
+  font-size: 15px;
+}
+#searchBtn {
+  width: 12vh;
+  height: 6ch;
+  font-size: 15px;
+  color: black;
+  background-color: #e5e4e3;
+  border: none;
+}
+#searchBtn:active {
+  background-color: #01718a;
+  color: white;
+}
+
+/* Cards styling */
+
+.cards {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  background-color: #01718a;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05)
+    );
+    padding-top: 13vh;
+}
+.Trips{
+  width: 80%;
+  margin: 0 35vh;
+
+}
+
+.Trips div {
+ display: inline-block;
+  /* margin: 0 1vh 1vh 3vh; */
+  width: 250px;
+  height: 300px;
+  margin-right: 13vh;
+  border: none;
+  border-radius: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+  font-size: 13px;
+  font-family: 'Arvo', serif;
+font-family: 'Source Sans Pro', sans-serif;
+background-color: white;
+  
+}
+
+.Trips img {
+  margin-left: 25px;
+  margin-top: 7px;
+  width: 200px;
+  height: 200px;
+  
+}
+
+.Item-des {
+  margin-top: 145px;
+  min-height: 75vh;
+}
+
+
+
+
+
+/* desc page */
+
+.Item-des{
+margin: 15% 20% 5% 20%;
+font-family: 'Source Sans Pro', sans-serif;
+}
+
+.tripDes{
+  border: 1px solid black;
+  background-color: #E5E4E3 ;
+}
+.tripDes h1{
+  text-align: center;
+  font-size: 25pxx;
+  font-weight: lighter;
+}
+.tripDes h2{
+  font-size: 17px;
+  color: #01718a;
+  margin-left: 50px;
+}
+
+.tripDes p{
+  margin-left: 100px;
+  color: black;
+  
+}
+ .btns{
+margin-left: 500px;
+}
+.buy {
+ width: 90px;
+  height: 40px;
+text-align: center;
+  font-size: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  color: white;
+  background-color: #01718a;
+  
+}
+.fav{
+  width: 90px;
+  height: 40px;
+  border: none;
+
+}
+
+
+footer{
+  height: 10vh;
+  background-color: #111820;
+  color: #A4A2A1;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
