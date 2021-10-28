@@ -12,140 +12,136 @@
 <div class="body">
 
     <body>
-<div class="background">
-        <header>
-            <div class="navBar">
-                <ul class="nav1List">
+        <div class="background">
+            <header>
+                <div class="navBar">
+                    <ul class="nav1List">
 
-                    <div class="nav1">
-                        <li><a href="url">Career</a> </li>
-                        <li><a href="url">Vendor Portal</a></li>
-                        <li><a href="url">Vendor Register</a></li>
-                        <li><a href="url">Speak-Up</a></li>
-                        <li><a href="url">Contact Us</a></li>
-                        <li><a href="url">Arabic</a></li>
-                    </div>
-                </ul>
+                        <div class="nav1">
+                            <li><a href="url">Career</a> </li>
+                            <li><a href="url">Vendor Portal</a></li>
+                            <li><a href="url">Vendor Register</a></li>
+                            <li><a href="url">Speak-Up</a></li>
+                            <li><a href="url">Contact Us</a></li>
+                            <li><a href="url">Arabic</a></li>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="navBar2">
+                    <a class="home" href="Home.html"><img id="SAR_logo" src="./sar header.png" alt="SAR logo"> </a>
+
+
+                    <ul class="nav2List">
+                        <div class="nav2">
+                            <li class="about"><a href="url">ABOUT SAR</a>
+                                <div class="about-content">
+                                    <a href="https://www.sar.com.sa/en/about-sar/our-story">OUR STORY</a>
+                                    <a href="https://www.sar.com.sa/en/about-sar/misson-and-vission">VISION & MISION</a>
+                                    <a href="https://www.sar.com.sa/en/about-sar/railway-networks">RAILSWAY NETWORKS</a>
+                                    <a href="https://www.sar.com.sa/en/about-sar/vendors-portal">VENDOORS PORTAL</a>
+                                </div>
+                            </li>
+                            <li class="travel"><a href="url">TRAVEL WITH SAR</a>
+                                <div class="travel-content">
+                                    <a href="https://www.sar.com.sa/en/travel-with-sar/travel-information">TRAVEL INFORMATION</a>
+                                    <a href="https://www.sar.com.sa/en/travel-with-sar/travel-classes">TRAVEL CLASSES</a>
+                                    <a href="https://www.sar.com.sa/en/travel-with-sar/timetable-route-map">TIMETABLE</a>
+                                    <a href="https://www.sar.com.sa/en/travel-with-sar/stations">STATIONS</a>
+                                    <a href="https://www.sar.com.sa/en/travel-with-sar/Cancellations-Modifications">CANCELATIONS & MODIFICATIONS</a>
+                                    <a href="https://www.sar.com.sa/en/useful-info/faq-categories">FAQ</a>
+                                    <a href="url">APPLE PAY</a>
+                                </div>
+                            </li>
+
+                            <li class="media"> <a href="url">MEDIA CENTER</a>
+                                <div class="media-content">
+                                    <a href="url">NEWS</a>
+                                    <a href="url">REPORTS</a>
+                                    <a href="url">MAHATTAT MAGAZINE</a>
+                                </div>
+                            </li>
+                            <li class="help"> <a href="url">HELP</a>
+                                <div class="help-content">
+                                    <a href="url">REFUND AND COMPENSATION</a>
+                                    <a href="url">COMPLAINT HANDLING POLICY </a>
+                                    <a href="url">CUSTOMER FEEDBACKS</a>
+                                    <a href="url">PASSENGER CHARTER</a>
+                                </div>
+                            </li>
+                            <li id="fav"><a onclick="showFav()">FAVORITE</a> </li>
+                            <li id="myTickets"> <a onclick="showBasket()">MY TICKETS</a></li>
+                        </div>
+                    </ul>
+
+                </div>
+            </header>
+
+            <div class="searchBar">
+                <input id="searchBar" type="text" placeholder="Where You Go"> <span class="focus-border"></span>
+                <button id="searchBtn">Search</button>
             </div>
 
-            <div class="navBar2">
-               <a class= "home" href="Home.html"><img id="SAR_logo" src="./sar header.png" alt="SAR logo"> </a>   
-                
-                
-                <ul class="nav2List">
-                    <div class="nav2">
-                        <li class="about"><a href="url">ABOUT SAR</a>
-                            <div class="about-content">
-                                <a href="url">OUR STORY</a>
-                                <a href="">VISION & MISION</a>
-                                <a href="">RAILSWAY NETWORKS</a>
-                                <a href="">VENDOORS PORTAL</a>
-                            </div>
-                        </li>
-                        <li class="travel"><a href="url">TRAVEL WITH SAR</a>
-                            <div class="travel-content">
-                                <a href="url">TRAVEL INFORMATION</a>
-                                <a href="url">TRAVEL CLASSES</a>
-                                <a href="url">TIMETABLE</a>
-                                <a href="url">STATIONS</a>
-                                <a href="url">CANCELATIONS & MODIFICATIONS</a>
-                                <a href="url">FAQ</a>
-                                <a href="url">APPLE PAY</a>
-                            </div>
-                        </li>
-                        
-                        <li class="media"> <a href="url">MEDIA CENTER</a>
-                            <div class="media-content">
-                                <a href="url">NEWS</a>
-                                <a href="url">REPORTS</a>
-                                <a href="url">MAHATTAT MAGAZINE</a>
-                            </div>
-                        </li>
-                        <li class="help"> <a href="url">HELP</a>
-                            <div class="help-content">
-                                <a href="url">REFUND AND COMPENSATION</a>
-                                <a href="url">COMPLAINT HANDLING POLICY </a>
-                                <a href="url">CUSTOMER FEEDBACKS</a>
-                                <a href="url">PASSENGER CHARTER</a>
-                            </div>
-                        </li>
-                        <li id="fav"><a onclick="showFav()">FAVORITE</a> </li>
-                        <li id="myTickets"> <a onclick="showBasket()">MY TICKETS</a></li>
-                    </div>
-                </ul>
+            <!-- Favourite page  -->
+            <div class="favPage"></div>
+
+            <!-- Tickets page -->
+            <div class="basket"></div>
+
+        </div>
+        <!-- Descreption page -->
+
+        <div class="searchResult"></div>
+
+
+
+
+
+
+
+
+
+
+        <div class="cards">
+
+            <div class="Trips">
+
 
             </div>
-        </header>
-
-<div class="searchBar">
-<input id="searchBar" type="text" placeholder="Where You Go"> <span class="focus-border"></span>
-<button id="searchBtn">Search</button>
-</div>
-
-<!-- Favourite page  -->
-<div class="favPage"></div>
-<!-- Tickets page -->
-<div class="basket"></div>
-
-</div>
-<!-- Descreption page -->
-
-<div class="searchResult"></div>
 
 
 
+        </div>
+        <div class="Item-des"></div>
 
 
 
+        <div class="lastPart">
 
+            <h1>FREIGHT</h1>
+            <p>"SAR" provides reliable shipping services within the best international standards. "Cargo freight trains”
+                transport about 350 thousand containers of goods annually, while the "Mineral freight trains" contribute
+                to the transportation of millions of tons of materials, with a capacity of more than 11 million tons
+                annually, through a network of more than 2,700 km.
 
+                "SAR" Freight Train Network uses the advanced European system "ETCS L2 -" to enhance the safety of
+                railway traffic by reducing the rate of human error to zero levels. So as to achieve more transport
+                reliability.</p>
 
-
-
-<div class="cards">
-   
-        <div class="Trips">
-            <div class="Item-des"></div> 
-
-            
- </div>
- 
-
- </div>
- 
-
- <div class="lastPart">
-
-<h1>FREIGHT</h1>
-<p>"SAR" provides reliable shipping services within the best international standards. "Cargo freight trains” transport about 350 thousand containers of goods annually, while the "Mineral freight trains" contribute to the transportation of millions of tons of materials, with a capacity of more than 11 million tons annually, through a network of more than 2,700 km.
-
-"SAR" Freight Train Network uses the advanced European system "ETCS L2 -" to enhance the safety of railway traffic by reducing the rate of human error to zero levels. So as to achieve more transport reliability.</p>
-
-<img id="map" src="./NETWORKS.png" alt="saudi map">
- </div>
+        </div>
 
 
 
 
 
 
-<footer> <small>&copy;Copyright 2021 SAUDI RAILWAYS COMPANY</small> </footer> 
+        <footer> <small>&copy;Copyright 2021 SAUDI RAILWAYS COMPANY</small> </footer>
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="home.js"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="home.js"></script>
+    </body>
 
 </html>
-
-
-   
-      
-
-
-
-
-
-
-

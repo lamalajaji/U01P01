@@ -1,11 +1,10 @@
-console.log("hello");
-// JSON.parse(localStorage.getItem("arr")) || 
+// JSON.parse(localStorage.getItem("trips")) ||
 let trips = [
   {
     name: " Qassim To: Riyadh",
     Day: "Sunday",
     Date: "Oct 31 , 2021",
-    imgFile: "addrrress.jpg",
+    imgFile: "img.jpg",
     Time: "15:30",
     economyClass: "105 SAR",
     economySeats: "70 Seats Left",
@@ -19,7 +18,7 @@ let trips = [
     name: " Riyadh To: Qassim ",
     Day: "Sunday",
     Date: "Oct 31 , 2021",
-    imgFile: "addrrress.jpg",
+    imgFile: "img.jpg",
     Time: "17:30",
     economyClass: "105 SAR",
     economySeats: "30 Seats Left",
@@ -33,7 +32,7 @@ let trips = [
     name: " Qassim To: Hail ",
     Day: "Sunday",
     Date: "Oct 31 , 2021",
-    imgFile: "addrrress.jpg",
+    imgFile: "img.jpg",
     Time: "13:15",
     economyClass: "105 SAR",
     economySeats: "60 Seats Left",
@@ -47,7 +46,7 @@ let trips = [
     name: " Hail To: Jauf ",
     Day: "Sunday",
     Date: "Oct 31 , 2021",
-    imgFile: "addrrress.jpg",
+    imgFile: "img.jpg",
     Time: "17:30",
     economyClass: "105 SAR",
     economySeats: "90 Seats Left",
@@ -61,7 +60,7 @@ let trips = [
     name: " Dammam To: Riyadh",
     Day: "Sunday",
     Date: "Oct 31 , 2021",
-    imgFile: "addrrress.jpg",
+    imgFile: "img.jpg",
     Time: "15:15",
     economyClass: "105 SAR",
     economySeats: "20 Seats Left",
@@ -75,7 +74,7 @@ let trips = [
     name: " Riyadh To: Dammam ",
     Day: "Sunday",
     Date: "Oct 31 , 2021",
-    imgFile: "addrrress.jpg",
+    imgFile: "img.jpg",
     Time: "18:30",
     economyClass: "105 SAR",
     economySeats: "40 Seats Left",
@@ -89,152 +88,172 @@ let trips = [
 
 // --------------- Adding to favorite list -----------
 let favList = [];
+
 const addToFavorite = (i) => {
-  
   trips[i].isFav = !trips[i].isFav;
-  // localStorage.setItem("arr", JSON.stringify(trips));
+  // localStorage.setItem("trips", JSON.stringify(trips));
   render();
-  favList.push[trips[i]]
- 
 };
-
-
 
 // --------------- Adding to Tickets list -----------
 let tickets = [];
 const addToTickets = (i) => {
   trips[i].isBuy = !trips[i].isBuy;
-  // localStorage.setItem("arr", JSON.stringify(trips));
+  // localStorage.setItem("trips", JSON.stringify(trips));
   render();
-  tickets.push(trips[i]);
-  
 };
-
 
 // -------------- Main Function ----------------------
 
 const render = () => {
-  $(".Trips").html("")
+  $(".Trips").html("");
   $(".Item-des").hide();
   $(".searchResult").hide();
   $(".favPage").hide();
   $(".basket").hide();
- 
+
   trips.forEach((item, i) => {
     $(".Trips").append(`<div class="main">
     <div id="trip${i}">
 <img class= "cities" src=${item.imgFile} alt="city">
 <h1>${item.name}</h1> 
 <button class="buy" id='buyBTn-${i}'onclick="addToTickets(${i})">Buy a Ticket</button>
-<button class="fav" id='favBTn-${i}' onclick="addToFavorite(${i})"><i class="far fa-heart"></i></button>
+<button class="fav" id='favBTn-${i}' onclick="addToFavorite(${i})"><i class="${
+      !item.isFav ? "far fa-heart" : "fas fa-heart"
+    }"></i></button>
 </div>
 
 
 </div>
 `);
 
-   
-if(item.isFav){
-  $("#favBTn-"+i).html(`<i class="fas fa-heart"></i>`);
-} else if (item.isBuy){
-  $("#buyBTn-"+i).html(`Remove Ticket`)
-}
+    if (item.isBuy) {
+      $("#buyBTn-" + i).html(`Remove Ticket`);
+    }
+
     // descreption page
     $("#trip" + i).click(() => {
       $(".searchBar").hide();
       $(".cards").hide();
-       $(".lastPart").hide();
-      $(".Item-des").append(` <div class="tripDes">
-   
-    <h1>Trip Summary: </h1>
+      // $(".Item-des").append(`<h1>hi lama this is magic</h1>`);
+      $(".lastPart").hide();
+      $(".Item-des").show();
+      $(".Item-des").append(`<div class="cont"> <div class="tripDes">
+    
+     <h1>Trip Summary: </h1>
  <h1 id="tripName"> ${trips[i].name} </h1>
-
-
  <h2>Departing On:</h2>  <p>${trips[i].Date}   - ${trips[i].Day}  </p>
 
- <h2>Stops: </h2>   <p>${trips[i].Stops}  </p>
+ <h2>Stops: </h2>  <p> ${trips[i].Stops}</p>
 
  <h2>Classes: </h2>
 
 <h2>Economy Class: </h2>   <p>${trips[i].economyClass} - 
-${trips[i].economySeats}  </p>
+<span> ${trips[i].economySeats} </span>  </p>
 
 <h2>Business Class: </h2>    <p>${trips[i].businessClass} -
 
-${trips[i].businessSeats}  </p>
+<span>${trips[i].businessSeats} </span> </p>
 <div class="btns"> 
 <button class="buy" id='buyBTn-${i}' onclick="addToTickets(${i})">Buy a Ticket</button>
 <button class="fav" id='favBTn-${i}' onclick="addToFavorite(${i})"><i class="far fa-heart"></i></button>
 </div>
+</div>
 </div>`);
     });
-     
-    
-    
-    
   });
+
+  favList = trips.filter((item) => item.isFav);
+  tickets = trips.filter((item) => item.isBuy);
 };
 
 render();
 
-
-
-// Search Bar function ///
-
-
-
-
-
-
-
-
 /////// fav function  //////////
 
-
-const showFav =()=>{
-   
+const showFav = () => {
   $(".cards").hide();
   $(".Item-des").hide();
   $(".searchBar").hide();
   $(".lastPart").hide();
   $("header").show();
   $(".favPage").show();
-  
-  const myFav  = trips.filter((item)=>{
-    return item.isFav === true
-  })
-  console.log(myFav);
+
   $(".favPage").html("");
-  myFav.forEach((item, i) => {
+
+  favList.forEach((item, i) => {
     $(".favPage").append(`<div class="container">
     <div id="trip${i}">
 <img class= "cities" src=${item.imgFile} alt="city">
 <h1>${item.name}</h1> 
+<button class="buy" id='buyBTn-${i}' onclick="addToTickets(${i})">Buy a Ticket</button>
+<button class="fav" id='favBTn-${i}' onclick="addToFavorite(${i})"><i class="${
+      item.isFav ? "fas fa-heart" : "far fa-heart"
+    }"></i></button>
+</div>
 </div>`);
   });
-}
- 
+};
 
 /////// Basket function ////////
-const showBasket =()=>{
-  
+const showBasket = () => {
   $(".cards").hide();
   $(".Item-des").hide();
   $(".searchBar").hide();
   $(".lastPart").hide();
   $("header").show();
   $(".basket").show();
-  const myTickets = trips.filter((item)=>{
-    return item.isBuy === true
-})
-$(".basket").html("");
-myTickets.forEach((item, i) => {
-  $(".basket").append(`<div>
+
+  $(".basket").html("");
+  tickets.forEach((item, i) => {
+    $(".basket").append(`<div class="container">
     <div id="trip${i}">
 <img class= "cities" src=${item.imgFile} alt="city">
 <h1>${item.name}</h1> 
+<button class="buy" id='buyBTn-${i}' onclick="addToTickets(${i})">Buy a Ticket</button>
+<button class="fav" id='favBTn-${i}' onclick="addToFavorite(${i})"><i class="far fa-heart"></i></button>
+</div>
 </div>`);
+  });
+};
+
+////////////////////////////
+
+$("#searchBtn").click(() => {
+  const inputValue = $("#searchBar").val();
+
+  const resultArr = trips.filter((item) => {
+    return item.name
+      .toLocaleLowerCase()
+      .includes(inputValue.toLocaleLowerCase());
+  });
+  $(".Trips").html("");
+  $(".Item-des").hide();
+  $(".searchResult").hide();
+  $(".favPage").hide();
+  $(".basket").hide();
+  $(".searchResult").show();
+  $(".lastPart").hide();
+  $(".searchResult").append(`
+  <h1> ${inputValue}<h1>
+  `);
+
+  /////////////////////////////////////////////////////////
+  const rendersearch = () => {
+    $(".searchResult").html("");
+    resultArr.forEach((item, i) => {
+      $(".searchResult").append(`<div class="main">
+    <div id="trip${i}">
+<img class= "cities" src=${item.imgFile} alt="city">
+<h1>${item.name}</h1> 
+<button class="buy" id='buyBTn-${i}'onclick="addToTickets(${i})">Buy a Ticket</button>
+<button class="fav" id='favBTn-${i}' onclick="addToFavorite(${i})"><i class="${
+        !item.isFav ? "far fa-heart" : "fas fa-heart"
+      }"></i></button>
+</div> </div>`);
+    });
+  };
+  rendersearch();
+
+  ////////////////////////////////////////////////////////////
 });
-
-
-}
