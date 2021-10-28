@@ -1,5 +1,5 @@
-// JSON.parse(localStorage.getItem("trips")) ||
-let trips = [
+
+let trips = JSON.parse(localStorage.getItem("trips")) || [
   {
     name: " Qassim To: Riyadh",
     Day: "Sunday",
@@ -91,7 +91,7 @@ let favList = [];
 
 const addToFavorite = (i) => {
   trips[i].isFav = !trips[i].isFav;
-  // localStorage.setItem("trips", JSON.stringify(trips));
+  localStorage.setItem("trips", JSON.stringify(trips));
   render();
 };
 
@@ -99,7 +99,7 @@ const addToFavorite = (i) => {
 let tickets = [];
 const addToTickets = (i) => {
   trips[i].isBuy = !trips[i].isBuy;
-  // localStorage.setItem("trips", JSON.stringify(trips));
+  localStorage.setItem("trips", JSON.stringify(trips));
   render();
 };
 
